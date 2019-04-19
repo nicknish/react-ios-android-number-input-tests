@@ -7,7 +7,7 @@ export const floatSanitizer = val => {
     .replace(/[,]/g, "");
 };
 
-export const dollarFormatter = value => {
+export const dollarFormatter = (value, currencySymbol) => {
   if (!value && value !== 0) {
     return value;
   }
@@ -26,5 +26,5 @@ export const dollarFormatter = value => {
   // iOS Bug: Must not use a template string here
   // https://bugs.webkit.org/show_bug.cgi?id=190756
   const numberVal = `${wholeNumber}${decimalString}`;
-  return "$" + numberVal;
+  return currencySymbol + numberVal;
 };

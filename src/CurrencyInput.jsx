@@ -15,7 +15,7 @@ const CurrencyInput = () => {
       <input
         type="text"
         inputMode="numeric"
-        value={dollarFormatter(value)}
+        value={dollarFormatter(value, "$")}
         onChange={onChange}
         placeholder="$0.00"
       />
