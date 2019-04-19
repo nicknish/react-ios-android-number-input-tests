@@ -7,13 +7,13 @@ export const floatSanitizer = val => {
     .replace(/[,]/g, "");
 };
 
-export const dollarFormatter = (value, currencySymbol) => {
-  if (!value && value !== 0) {
-    return value;
+export const dollarFormatter = (val, currencySymbol) => {
+  if (!val && val !== 0) {
+    return val;
   }
 
   const formatter = new Intl.NumberFormat("en-US");
-  const numberParts = value.toString().split(".");
+  const numberParts = val.toString().split(".");
   const wholeNumber = formatter.format(parseFloat(numberParts[0]));
   const hundredthsNumber = numberParts[1];
   const decimalString =
