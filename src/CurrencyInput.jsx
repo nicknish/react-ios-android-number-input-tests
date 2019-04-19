@@ -6,6 +6,7 @@ const CurrencyInput = () => {
 
   const onChange = e => {
     const value = floatSanitizer(e.target.value);
+    console.log(value);
     setValue(value);
   };
 
