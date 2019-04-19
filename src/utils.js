@@ -1,10 +1,23 @@
-export const floatSanitizer = val => {
+export const sanitizeFloat = val => {
   if (!val) return val;
   const nonDigitOrDecimalReg = /[^\d\.]/g;
   return val
     .replace(nonDigitOrDecimalReg, "")
     .replace(/(?!^)-/g, "")
     .replace(/[,]/g, "");
+};
+
+export const validateFloat = val => {
+  if (!val) return true;
+
+  const decimalCharMatches = val.match(/\./gi);
+  const hasMultipleDecimal =
+    decimalCharMatches && decimalCharMatches.length > 1;
+
+  if (hasMultipleDecimal) return false;
+  if (isNaN(val)) return false;
+
+  return true;
 };
 
 export const dollarFormatter = (val, currencySymbol) => {
