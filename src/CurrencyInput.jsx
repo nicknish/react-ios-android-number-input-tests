@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { floatSanitizer, dollarFormatter } from "./utils";
 
 const CurrencyInput = () => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState("");
 
   const onChange = e => {
     const value = floatSanitizer(e.target.value);
