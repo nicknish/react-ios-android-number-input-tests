@@ -21,20 +21,18 @@ const CurrencyInputSymbolOnFocus = ({ currencySymbol }) => {
   };
 
   return (
-    <>
-      <input
-        type="text"
-        inputMode="numeric"
-        value={
-          value && value !== currencySymbol
-            ? dollarFormatter(value, currencySymbol)
-            : value
-        }
-        onChange={onChange}
-        onFocus={onFocusSetCurrencySymbol}
-        placeholder="$0.00"
-      />
-    </>
+    <input
+      type="text"
+      inputMode="numeric"
+      value={
+        value && value !== currencySymbol
+          ? dollarFormatter(value, currencySymbol)
+          : value
+      }
+      onChange={onChange}
+      onFocus={onFocusSetCurrencySymbol}
+      placeholder="$0.00"
+    />
   );
 };
 
