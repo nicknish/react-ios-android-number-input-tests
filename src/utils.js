@@ -15,7 +15,7 @@ export const validateFloat = val => {
     decimalCharMatches && decimalCharMatches.length > 1;
 
   if (hasMultipleDecimal) return false;
-  if (isNaN(val)) return false;
+  if (Number.isNaN(parseFloat(val))) return false;
 
   return true;
 };
